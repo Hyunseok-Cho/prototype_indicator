@@ -1,0 +1,99 @@
+.symbol-tabs {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 1rem clamp(1rem, 2vw, 1.7rem);
+}
+
+.symbol-tabs__tab {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  min-height: 5rem;
+  padding: 0.85rem;
+  text-align: left;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+  }
+
+  &.is-active {
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--symbol-accent) 16%, transparent), transparent 72%),
+      var(--panel-2);
+    border-color: color-mix(in srgb, var(--symbol-accent) 62%, var(--border));
+  }
+}
+
+.symbol-tabs__icon {
+  align-items: center;
+  background: color-mix(in srgb, var(--symbol-accent) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--symbol-accent) 45%, transparent);
+  border-radius: 8px;
+  color: var(--symbol-accent);
+  display: inline-flex;
+  height: 2.45rem;
+  justify-content: center;
+  width: 2.45rem;
+}
+
+.symbol-tabs__copy,
+.symbol-tabs__market {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+
+  strong {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.12;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  small {
+    color: var(--text-soft);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0;
+  }
+}
+
+.symbol-tabs__market {
+  text-align: right;
+}
+
+.symbol-tabs__market .is-up {
+  color: var(--green);
+}
+
+.symbol-tabs__market .is-down {
+  color: var(--red);
+}
+
+@media (max-width: 980px) {
+  .symbol-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .symbol-tabs__tab {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .symbol-tabs__market {
+    display: none;
+  }
+}

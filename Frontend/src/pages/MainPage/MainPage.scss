@@ -1,0 +1,12 @@
+.main-page {
+  display: grid;
+  margin: 0 auto;
+  max-width: 1480px;
+  min-height: 100svh;
+}
+
+.main-page__content {
+  display: grid;
+  gap: 1rem;
+  padding: 0 clamp(1rem, 2vw, 1.7rem) 1.7rem;
+}
