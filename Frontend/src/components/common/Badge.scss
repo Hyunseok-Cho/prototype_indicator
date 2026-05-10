@@ -1,0 +1,37 @@
+.badge {
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  display: inline-flex;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  gap: 0.35rem;
+  letter-spacing: 0;
+  line-height: 1;
+  min-height: 1.7rem;
+  padding: 0.35rem 0.65rem;
+  white-space: nowrap;
+}
+
+.badge--long,
+.badge--low {
+  background: var(--green-soft);
+  border-color: rgba(56, 217, 150, 0.35);
+  color: var(--green);
+}
+
+.badge--short,
+.badge--high {
+  background: var(--red-soft);
+  border-color: rgba(255, 104, 104, 0.35);
+  color: var(--red);
+}
+
+.badge--no_trade,
+.badge--medium {
+  background: var(--amber-soft);
+  border-color: rgba(247, 199, 95, 0.36);
+  color: var(--amber);
+}
